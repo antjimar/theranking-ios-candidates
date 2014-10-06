@@ -34,7 +34,7 @@ We would like to have an small application that has two main views. The first on
 * Candidates are not allowed to use third party libraries. It is only allowed the use of third party libraries to load asychronously images. In this case, candidates must use [Cocoapods](http://cocoapods.org/) to handle dependences. If candidates still need to use any other third party library, they must justify their use.
 * Storyboards are not allowed. Candidates can use NIB files but not Storyboards.
 * The candidate must chose the UI that fits better the requirements but the UI must be done using Auto Layout constraints.
-* Candidates have five days to present a pull request with a solution, but the sooner the candidate presents a solution more chances the candidate will have.
+* Candidates have three days to present a pull request with a solution, but the sooner the candidate presents a solution more chances the candidate will have.
 
 ## Optional
 
