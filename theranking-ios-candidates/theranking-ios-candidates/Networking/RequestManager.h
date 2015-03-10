@@ -11,7 +11,7 @@
 typedef void (^SuccessBlock)(id data);
 typedef void (^ErrorBlock)(id data, NSError *error);
 
-@protocol RequestManagerProtocol <NSObject>
+@protocol RequestManager <NSObject>
 
 @property (copy, nonatomic) NSString *baseDomain;
 @property (copy, nonatomic) NSDictionary *defaultParams;

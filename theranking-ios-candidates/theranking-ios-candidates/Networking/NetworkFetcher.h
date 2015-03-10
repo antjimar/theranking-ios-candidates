@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RequestManagerProtocol.h"
 
-@interface NetworkFetcher : NSObject<RequestManagerProtocol>
+@interface NetworkFetcher : NSObject<RequestManager>
 
 @end

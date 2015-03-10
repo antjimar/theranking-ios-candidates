@@ -11,7 +11,7 @@
 
 @implementation RequestManagerFactory
 
-+ (id<RequestManagerProtocol>)requestManager {
++ (id<RequestManager>)requestManager {
     return [[NetworkFetcher alloc] init];
 }
 

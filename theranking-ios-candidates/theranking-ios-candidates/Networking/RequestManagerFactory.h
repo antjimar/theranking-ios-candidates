@@ -11,6 +11,6 @@
 
 @interface RequestManagerFactory : NSObject
 
-+ (id<RequestManagerProtocol>)requestManager;
++ (id<RequestManager>)requestManager;
 
 @end

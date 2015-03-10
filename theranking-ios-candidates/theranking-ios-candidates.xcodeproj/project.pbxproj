@@ -65,7 +65,7 @@
 		79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureEntity+Parser.m"; sourceTree = "<group>"; };
 		79EB8D801AAF648200E6E6F2 /* BaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseProvider.h; sourceTree = "<group>"; };
 		79EB8D811AAF648200E6E6F2 /* BaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProvider.m; sourceTree = "<group>"; };
-		79EB8D831AAF64AA00E6E6F2 /* RequestManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManagerProtocol.h; sourceTree = "<group>"; };
+		79EB8D831AAF64AA00E6E6F2 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		79EB8D841AAF64F700E6E6F2 /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
 		79EB8D851AAF64F700E6E6F2 /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
 		79EB8D861AAF64F700E6E6F2 /* PictureCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		79EB8D541AAF00AD00E6E6F2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				79EB8D831AAF64AA00E6E6F2 /* RequestManagerProtocol.h */,
+				79EB8D831AAF64AA00E6E6F2 /* RequestManager.h */,
 				795B08201AAF6AEA0049BFA9 /* RequestManagerFactory.h */,
 				795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */,
 				795B08251AAF6B8B0049BFA9 /* NetworkFetcher.h */,
