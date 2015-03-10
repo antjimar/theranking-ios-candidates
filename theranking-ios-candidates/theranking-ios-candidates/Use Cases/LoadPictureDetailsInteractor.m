@@ -9,5 +9,7 @@
 #import "LoadPictureDetailsInteractor.h"
 
 @implementation LoadPictureDetailsInteractor
-
+- (void)showDetailsForPicture:(PictureEntity *)picture withCompletionBlock:(void(^)(PictureEntity *pictureWithDetails))completion {
+    
+}
 @end

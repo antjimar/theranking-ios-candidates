@@ -7,7 +7,8 @@
 //
 
 #import "BaseInteractor.h"
+@class PictureEntity;
 
 @interface LoadPictureDetailsInteractor : BaseInteractor
-
+- (void)showDetailsForPicture:(PictureEntity *)picture withCompletionBlock:(void(^)(PictureEntity *pictureWithDetails))completion;
 @end

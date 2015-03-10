@@ -7,7 +7,12 @@
 //
 
 #import "BaseInteractor.h"
+@class PicturesProvider;
+@class PictureEntity;
 
 @interface LoadPicturesInteractor : BaseInteractor
 
+@property (strong, nonatomic) PicturesProvider *pictureProvider;
+
+- (void)listOfPicuresWithCompletionBlock:(void(^)(NSArray *pictures))completion;
 @end

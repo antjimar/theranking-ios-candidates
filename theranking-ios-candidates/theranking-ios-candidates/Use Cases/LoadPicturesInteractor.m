@@ -7,7 +7,25 @@
 //
 
 #import "LoadPicturesInteractor.h"
+#import "PicturesProvider.h"
+#import "PicturesProvider.h"
 
 @implementation LoadPicturesInteractor
 
+- (void)listOfPicuresWithCompletionBlock:(void(^)(NSArray *pictures))completion {
+    [self.pictureProvider loadPicturesWithSuccess:^(id data) {
+        completion(data);
+    } error:^(id data, NSError *error) {
+        completion(nil);
+    }];
+}
+
+#pragma mark - Lazy loading Methods
+-(PicturesProvider *)pictureProvider {
+    if (!_pictureProvider) {
+        _pictureProvider = [[PicturesProvider alloc] init];
+        _pictureProvider.managedObjectContext = self.managedObjectContext;
+    }
+    return _pictureProvider;
+}
 @end
