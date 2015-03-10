@@ -11,6 +11,6 @@
 
 @interface LoadPictureDetailsInteractor : BaseInteractor
 
-- (NSArray *)showDetailsForPicture:(PictureEntity *)picture;
+- (PictureEntity *)showDetailsForPicture:(PictureEntity *)picture;
 
 @end

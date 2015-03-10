@@ -13,7 +13,7 @@ static NSString * const kPictureEntityName = @"PictureEntity";
 
 @implementation LoadPictureDetailsInteractor
 
-- (NSArray *)showDetailsForPicture:(PictureEntity *)picture {
+- (PictureEntity *)showDetailsForPicture:(PictureEntity *)picture {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"pictureId", [NSString stringWithFormat:@"%@", picture.pictureId]];
     NSArray *pictures = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
