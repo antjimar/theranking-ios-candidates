@@ -85,9 +85,15 @@
 				79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */,
 				79EB8D4B1AAEFD5100E6E6F2 /* CoreDataStack.h */,
 				79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */,
-				79EB8D321AAEFC1E00E6E6F2 /* Images.xcassets */,
+				79EB8D4E1AAF004600E6E6F2 /* ViewControllers */,
+				79EB8D4F1AAF005500E6E6F2 /* Views */,
+				79EB8D501AAF006300E6E6F2 /* Entities */,
+				79EB8D521AAF009100E6E6F2 /* Use Cases */,
+				79EB8D531AAF009F00E6E6F2 /* Providers */,
+				79EB8D541AAF00AD00E6E6F2 /* Networking */,
 				79EB8D341AAEFC1E00E6E6F2 /* LaunchScreen.xib */,
 				79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */,
+				79EB8D321AAEFC1E00E6E6F2 /* Images.xcassets */,
 				79EB8D281AAEFC1E00E6E6F2 /* Supporting Files */,
 			);
 			path = "theranking-ios-candidates";
@@ -117,6 +123,56 @@
 				79EB8D401AAEFC1E00E6E6F2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79EB8D4E1AAF004600E6E6F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79EB8D4F1AAF005500E6E6F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		79EB8D501AAF006300E6E6F2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				79EB8D511AAF007800E6E6F2 /* EntityMapping */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		79EB8D511AAF007800E6E6F2 /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EntityMapping;
+			sourceTree = "<group>";
+		};
+		79EB8D521AAF009100E6E6F2 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Use Cases";
+			sourceTree = "<group>";
+		};
+		79EB8D531AAF009F00E6E6F2 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		79EB8D541AAF00AD00E6E6F2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
