@@ -13,6 +13,7 @@
 		79EB8D331AAEFC1E00E6E6F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79EB8D321AAEFC1E00E6E6F2 /* Images.xcassets */; };
 		79EB8D361AAEFC1E00E6E6F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EB8D341AAEFC1E00E6E6F2 /* LaunchScreen.xib */; };
 		79EB8D421AAEFC1E00E6E6F2 /* theranking_ios_candidatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D411AAEFC1E00E6E6F2 /* theranking_ios_candidatesTests.m */; };
+		79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		79EB8D3B1AAEFC1E00E6E6F2 /* theranking-ios-candidatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "theranking-ios-candidatesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB8D401AAEFC1E00E6E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79EB8D411AAEFC1E00E6E6F2 /* theranking_ios_candidatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = theranking_ios_candidatesTests.m; sourceTree = "<group>"; };
+		79EB8D4B1AAEFD5100E6E6F2 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 			children = (
 				79EB8D2C1AAEFC1E00E6E6F2 /* AppDelegate.h */,
 				79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */,
+				79EB8D4B1AAEFD5100E6E6F2 /* CoreDataStack.h */,
+				79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */,
 				79EB8D321AAEFC1E00E6E6F2 /* Images.xcassets */,
 				79EB8D341AAEFC1E00E6E6F2 /* LaunchScreen.xib */,
 				79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */,
@@ -216,6 +221,7 @@
 				79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */,
 				79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */,
 				79EB8D2B1AAEFC1E00E6E6F2 /* main.m in Sources */,
+				79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
