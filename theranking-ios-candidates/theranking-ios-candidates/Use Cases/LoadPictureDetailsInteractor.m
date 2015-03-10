@@ -7,9 +7,20 @@
 //
 
 #import "LoadPictureDetailsInteractor.h"
+#import "PictureEntity.h"
+
+NSString * const kPictureEntityName = @"PictureEntity";
+
 
 @implementation LoadPictureDetailsInteractor
-- (void)showDetailsForPicture:(PictureEntity *)picture withCompletionBlock:(void(^)(PictureEntity *pictureWithDetails))completion {
+
+- (NSArray *)showDetailsForPicture:(PictureEntity *)picture {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"pictureId", [NSString stringWithFormat:@"%@", picture.pictureId]];
+    NSArray *pictures = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
+    return [pictures firstObject];
 }
+
+
 @end
