@@ -1,5 +1,5 @@
 //
-//  RequestManager.h
+//  RequestManagerFactory.h
 //  theranking-ios-candidates
 //
 //  Created by ANTONIO JIMÉNEZ MARTÍNEZ on 10/3/15.
@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "RequestManagerProtocol.h"
 
-@interface RequestManager : NSObject<RequestManagerProtocol>
+@interface RequestManagerFactory : NSObject
+
++ (id<RequestManagerProtocol>)requestManager;
 
 @end
