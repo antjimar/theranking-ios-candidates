@@ -9,8 +9,7 @@
 #import "LoadPictureDetailsInteractor.h"
 #import "PictureEntity.h"
 
-NSString * const kPictureEntityName = @"PictureEntity";
-
+static NSString * const kPictureEntityName = @"PictureEntity";
 
 @implementation LoadPictureDetailsInteractor
 

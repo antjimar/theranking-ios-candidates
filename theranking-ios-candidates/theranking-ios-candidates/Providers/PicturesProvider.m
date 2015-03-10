@@ -9,10 +9,10 @@
 #import "PicturesProvider.h"
 #import "PictureEntity+Builder.h"
 
-NSInteger const kNumberOfPhotos = 60;
-NSInteger const kImageSize = 4;
-NSString * const kPhotosKey = @"photos";
-NSString * const kPictureEntityName = @"PictureEntity";
+static NSInteger const kNumberOfPhotos = 60;
+static NSInteger const kImageSize = 4;
+static NSString * const kPhotosKey = @"photos";
+static NSString * const kPictureEntityName = @"PictureEntity";
 
 @implementation PicturesProvider
 
@@ -21,6 +21,7 @@ NSString * const kPictureEntityName = @"PictureEntity";
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
     NSArray *pictures = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     successBlock(pictures);
+
     
     // Download from API Rest
     NSDictionary* URLParams = @{

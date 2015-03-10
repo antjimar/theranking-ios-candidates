@@ -8,7 +8,6 @@
 
 #import "LoadPicturesInteractor.h"
 #import "PicturesProvider.h"
-#import "PicturesProvider.h"
 
 @implementation LoadPicturesInteractor
 

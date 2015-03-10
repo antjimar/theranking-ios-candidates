@@ -10,11 +10,11 @@
 #import "RequestManagerFactory.h"
 
 NSString * const kConsumerKey = @"I7K8Q424HyKNtFYwG0TzY1N7UjIXHcwRAMa6nBnN";
-NSString * const kBaseDomain = @"https://api.500px.com/v1/photos";
+static NSString * const kBaseDomain = @"https://api.500px.com/v1/photos";
 
 @implementation BaseProvider
 
--(id<RequestManager>)requestManager {
+- (id<RequestManager>)requestManager {
     if (!_requestManager) {
         _requestManager = [RequestManagerFactory requestManager];
         _requestManager.baseDomain = kBaseDomain;
