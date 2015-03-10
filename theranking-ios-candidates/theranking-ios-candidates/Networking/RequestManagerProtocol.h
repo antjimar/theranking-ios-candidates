@@ -14,7 +14,7 @@ typedef void (^ErrorBlock)(id data, NSError *error);
 @protocol RequestManagerProtocol <NSObject>
 
 @property (copy, nonatomic) NSString *baseDomain;
-@property (copy,nonatomic) NSDictionary *defaultParams;
+@property (copy, nonatomic) NSDictionary *defaultParams;
 
 - (void)GET:(NSString *)endpoint parameters:(NSDictionary *)parameters completion:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
 
