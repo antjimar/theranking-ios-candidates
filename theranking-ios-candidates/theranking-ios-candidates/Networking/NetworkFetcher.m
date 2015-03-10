@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 antjimar. All rights reserved.
 //
 
-#import "RequestManager.h"
+#import "NetworkFetcher.h"
 
-@implementation RequestManager
+@implementation NetworkFetcher
 
 @synthesize baseDomain = _baseDomain;
 @synthesize defaultParams = _defaultParams;

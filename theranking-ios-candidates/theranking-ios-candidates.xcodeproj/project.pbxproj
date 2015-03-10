@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		795B08221AAF6AEA0049BFA9 /* RequestManagerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */; };
-		795B08271AAF6B8B0049BFA9 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08261AAF6B8B0049BFA9 /* RequestManager.m */; };
+		795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */; };
 		79EB8D2B1AAEFC1E00E6E6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2A1AAEFC1E00E6E6F2 /* main.m */; };
 		79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */; };
 		79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */; };
@@ -43,8 +43,8 @@
 /* Begin PBXFileReference section */
 		795B08201AAF6AEA0049BFA9 /* RequestManagerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManagerFactory.h; sourceTree = "<group>"; };
 		795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManagerFactory.m; sourceTree = "<group>"; };
-		795B08251AAF6B8B0049BFA9 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
-		795B08261AAF6B8B0049BFA9 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		795B08251AAF6B8B0049BFA9 /* NetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFetcher.h; sourceTree = "<group>"; };
+		795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFetcher.m; sourceTree = "<group>"; };
 		79EB8D251AAEFC1E00E6E6F2 /* theranking-ios-candidates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "theranking-ios-candidates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB8D291AAEFC1E00E6E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79EB8D2A1AAEFC1E00E6E6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 				79EB8D831AAF64AA00E6E6F2 /* RequestManagerProtocol.h */,
 				795B08201AAF6AEA0049BFA9 /* RequestManagerFactory.h */,
 				795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */,
-				795B08251AAF6B8B0049BFA9 /* RequestManager.h */,
-				795B08261AAF6B8B0049BFA9 /* RequestManager.m */,
+				795B08251AAF6B8B0049BFA9 /* NetworkFetcher.h */,
+				795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -359,7 +359,7 @@
 				79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */,
 				79EB8D981AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m in Sources */,
 				79EB8D821AAF648200E6E6F2 /* BaseProvider.m in Sources */,
-				795B08271AAF6B8B0049BFA9 /* RequestManager.m in Sources */,
+				795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

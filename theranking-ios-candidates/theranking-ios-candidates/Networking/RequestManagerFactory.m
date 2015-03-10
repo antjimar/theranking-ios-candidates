@@ -7,12 +7,12 @@
 //
 
 #import "RequestManagerFactory.h"
-#import "RequestManager.h"
+#import "NetworkFetcher.h"
 
 @implementation RequestManagerFactory
 
 + (id<RequestManagerProtocol>)requestManager {
-    return [[RequestManager alloc] init];
+    return [[NetworkFetcher alloc] init];
 }
 
 @end
