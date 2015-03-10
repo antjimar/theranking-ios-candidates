@@ -11,6 +11,7 @@
 
 @implementation PictureEntity
 
+@dynamic pictureId;
 @dynamic pictureImgURL;
 @dynamic pictureName;
 @dynamic pictureRating;

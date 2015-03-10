@@ -12,6 +12,7 @@
 
 @interface PictureEntity : NSManagedObject
 
+@property (nonatomic, retain) NSString * pictureId;
 @property (nonatomic, retain) NSString * pictureImgURL;
 @property (nonatomic, retain) NSString * pictureName;
 @property (nonatomic, retain) NSNumber * pictureRating;

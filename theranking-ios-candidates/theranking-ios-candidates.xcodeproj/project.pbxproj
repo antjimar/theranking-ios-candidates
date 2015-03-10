@@ -17,7 +17,7 @@
 		79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */; };
 		79EB8D571AAF0B5B00E6E6F2 /* BaseInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D561AAF0B5B00E6E6F2 /* BaseInteractor.m */; };
 		79EB8D7C1AAF62F900E6E6F2 /* PictureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D7B1AAF62F900E6E6F2 /* PictureEntity.m */; };
-		79EB8D7F1AAF636000E6E6F2 /* PictureEntity+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Parser.m */; };
+		79EB8D7F1AAF636000E6E6F2 /* PictureEntity+Builder.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Builder.m */; };
 		79EB8D821AAF648200E6E6F2 /* BaseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D811AAF648200E6E6F2 /* BaseProvider.m */; };
 		79EB8D871AAF64F700E6E6F2 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D851AAF64F700E6E6F2 /* PictureCollectionViewCell.m */; };
 		79EB8D881AAF64F700E6E6F2 /* PictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EB8D861AAF64F700E6E6F2 /* PictureCollectionViewCell.xib */; };
@@ -61,8 +61,8 @@
 		79EB8D561AAF0B5B00E6E6F2 /* BaseInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInteractor.m; sourceTree = "<group>"; };
 		79EB8D7A1AAF62F900E6E6F2 /* PictureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEntity.h; sourceTree = "<group>"; };
 		79EB8D7B1AAF62F900E6E6F2 /* PictureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureEntity.m; sourceTree = "<group>"; };
-		79EB8D7D1AAF636000E6E6F2 /* PictureEntity+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureEntity+Parser.h"; sourceTree = "<group>"; };
-		79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureEntity+Parser.m"; sourceTree = "<group>"; };
+		79EB8D7D1AAF636000E6E6F2 /* PictureEntity+Builder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureEntity+Builder.h"; sourceTree = "<group>"; };
+		79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Builder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureEntity+Builder.m"; sourceTree = "<group>"; };
 		79EB8D801AAF648200E6E6F2 /* BaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseProvider.h; sourceTree = "<group>"; };
 		79EB8D811AAF648200E6E6F2 /* BaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProvider.m; sourceTree = "<group>"; };
 		79EB8D831AAF64AA00E6E6F2 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 		79EB8D511AAF007800E6E6F2 /* EntityMapping */ = {
 			isa = PBXGroup;
 			children = (
-				79EB8D7D1AAF636000E6E6F2 /* PictureEntity+Parser.h */,
-				79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Parser.m */,
+				79EB8D7D1AAF636000E6E6F2 /* PictureEntity+Builder.h */,
+				79EB8D7E1AAF636000E6E6F2 /* PictureEntity+Builder.m */,
 			);
 			path = EntityMapping;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79EB8D7F1AAF636000E6E6F2 /* PictureEntity+Parser.m in Sources */,
+				79EB8D7F1AAF636000E6E6F2 /* PictureEntity+Builder.m in Sources */,
 				79EB8D9B1AAF68A300E6E6F2 /* PicturesProvider.m in Sources */,
 				79EB8D8F1AAF655400E6E6F2 /* DetailPictureViewController.m in Sources */,
 				79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */,
