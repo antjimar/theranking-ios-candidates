@@ -6,8 +6,14 @@
 //  Copyright (c) 2015 antjimar. All rights reserved.
 //
 
-#import "PictureEntity+Parser.h"
+#import "PictureEntity+Builder.h"
 
-@implementation PictureEntity (Parser)
+@implementation PictureEntity (Builder)
+
++ (NSDictionary *)dictionaryFromData:(NSData *)data {
+    NSError *error;
+    NSDictionary *pictureDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    return pictureDict;
+}
 
 @end

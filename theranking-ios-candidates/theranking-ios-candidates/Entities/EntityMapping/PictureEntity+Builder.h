@@ -8,6 +8,8 @@
 
 #import "PictureEntity.h"
 
-@interface PictureEntity (Parser)
+@interface PictureEntity (Builder)
+
++ (NSDictionary *)dictionaryFromData:(NSData *)data;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import "RequestManager.h"
 
 extern NSString * const kConsumerKey;
@@ -14,5 +15,6 @@ extern NSString * const kConsumerKey;
 @interface BaseProvider : NSObject
 
 @property (strong, nonatomic) id<RequestManager> requestManager;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
