@@ -8,6 +8,25 @@
 
 #import "PictureEntity+Builder.h"
 
+const struct PictureEntityAttributes PictureEntityAttributes = {
+    .pictureId = @"pictureId",
+    .pictureImgURL = @"pictureImgURL",
+    .pictureName = @"pictureName",
+    .pictureRating = @"pictureRating",
+    .pictureDescription = @"pictureDescription",
+    .pictureUserFullName = @"pictureUserFullName",
+    .pictureUserAvatarURL = @"pictureUserAvatarURL",
+    .pictureCamera = @"pictureCamera",
+    .pictureCameraLens = @"pictureCameraLens",
+    .pictureCameraFocalLength = @"pictureCameraFocalLength",
+    .pictureCameraISO = @"pictureCameraISO",
+    .pictureCameraShutterSpeed = @"pictureCameraShutterSpeed",
+    .pictureCameraAperture = @"pictureCameraAperture",
+    .pictureLatitud = @"pictureLatitud",
+    .pictureLongitud = @"pictureLongitud",
+
+};
+
 static NSString * const kDotSeparator = @".";
 static NSString * const kCameraJSON = @"camera";
 static NSString * const kApertureJSON = @"aperture";
@@ -24,6 +43,8 @@ static NSString * const kNameJSON = @"name";
 static NSString * const kRatingJSON = @"rating";
 static NSString * const kUserPicURLJSON = @"user.userpic_url";
 static NSString * const kFullnameJSON = @"user.fullname";
+NSString * const kPictureEntityName = @"PictureEntity";
+
 
 
 @implementation PictureEntity (Builder)
