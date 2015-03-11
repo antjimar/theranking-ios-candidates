@@ -1,0 +1,11 @@
+platform :ios, '7.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'theranking-ios-candidates' do
+pod 'SDWebImage', '~>3.6'
+end
+
+target 'theranking-ios-candidatesTests' do
+
+end
