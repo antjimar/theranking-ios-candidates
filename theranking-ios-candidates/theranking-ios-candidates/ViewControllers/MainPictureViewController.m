@@ -10,6 +10,7 @@
 #import "PictureCollectionViewCell.h"
 #import "PictureEntity.h"
 #import "LoadPicturesInteractor.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *cellId = @"PictureCellId";
 
@@ -59,18 +60,13 @@ static NSString *cellId = @"PictureCellId";
     // Stop activity because we have data :)
     [self stopActivityIndicator];
 
-    
-    // Obtener el objeto modelo
     PictureEntity *picture = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    // Crear la celda
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
                                                                                 forIndexPath:indexPath];
-    
-    // Configurarla
     cell.pictureNameLabel.text = picture.pictureName;
     cell.ratingLabel.text = [NSString stringWithFormat:@"%@", picture.pictureRating];
-    
+    [cell.pictureImageView sd_setImageWithURL:[NSURL URLWithString:picture.pictureImgURL]
+                             placeholderImage:[UIImage imageNamed:@"500px-logo1"]];
     // Devolverla
     return cell;
 }

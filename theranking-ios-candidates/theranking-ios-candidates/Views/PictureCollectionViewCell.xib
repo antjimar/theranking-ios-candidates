@@ -27,6 +27,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.87450678661616166" green="0.87450678661616166" blue="0.87450678661616166" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-vH-Uqi">
                                 <rect key="frame" x="326" y="8" width="56" height="38"/>
@@ -40,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.92128314393939392" blue="0.11467285515544005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.82433712121212122" green="0.82433712121212122" blue="0.82433712121212122" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="spD-G9-o9r" firstAttribute="leading" secondItem="Lhu-oO-WsS" secondAttribute="leading" id="3wy-HE-7co"/>
                             <constraint firstItem="msn-13-rhw" firstAttribute="leading" secondItem="Lhu-oO-WsS" secondAttribute="leading" id="43f-6D-I9D"/>
