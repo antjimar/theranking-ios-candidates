@@ -10,7 +10,6 @@
 #import "PictureCollectionViewCell.h"
 #import "PictureEntity+Builder.h"
 #import "LoadPicturesInteractor.h"
-#import "LoadPictureDetailsInteractor.h"
 #import "DetailPictureViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
