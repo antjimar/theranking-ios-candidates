@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.ratingLabel.clipsToBounds = YES;
+    self.ratingLabel.layer.cornerRadius = self.ratingLabel.bounds.size.height / 2.0f;
 }
 
 @end

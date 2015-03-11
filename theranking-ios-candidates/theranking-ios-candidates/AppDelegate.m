@@ -12,7 +12,7 @@
 #import "PictureEntity+Builder.h"
 
 static NSString * const kModelName = @"theranking_ios_candidates";
-static CGFloat const kMarginCells = 30.0f;
+static CGFloat const kMarginCells = 0.0f;
 
 @interface AppDelegate ()
 @property (strong, nonatomic) CoreDataStack *coreDataStack;
@@ -66,8 +66,8 @@ static CGFloat const kMarginCells = 30.0f;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = kMarginCells;
-    layout.itemSize = CGSizeMake(screenWidth - kMarginCells, screenWidth - kMarginCells);
-    layout.sectionInset = UIEdgeInsetsMake(kMarginCells, kMarginCells, kMarginCells, kMarginCells);
+    layout.itemSize = CGSizeMake(screenWidth, screenWidth);
+//    layout.sectionInset = UIEdgeInsetsMake(kMarginCells, kMarginCells, kMarginCells, kMarginCells);
     
     return layout;
 }
@@ -89,10 +89,14 @@ static CGFloat const kMarginCells = 30.0f;
     NSShadow *shadow = [NSShadow new];
     [shadow setShadowColor: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]];
     [shadow setShadowOffset: CGSizeMake(0.0f, 0.5f)];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor, NSShadowAttributeName: shadow,}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor,
+                                                           NSShadowAttributeName: shadow,}];
     [[UINavigationBar appearance] setTintColor:titleTextColor];
     [[UINavigationBar appearance] setBarTintColor:navBarBackgroundColor];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor, NSShadowAttributeName: shadow,} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor,
+                                                           NSShadowAttributeName: shadow,} forState:UIControlStateNormal];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 @end
