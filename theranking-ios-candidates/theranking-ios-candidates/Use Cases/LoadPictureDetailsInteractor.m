@@ -7,10 +7,8 @@
 //
 
 #import "LoadPictureDetailsInteractor.h"
-#import "PictureEntity.h"
+#import "PictureEntity+Builder.h"
 #import "CoreDataStack.h"
-
-static NSString * const kPictureEntityName = @"PictureEntity";
 
 @implementation LoadPictureDetailsInteractor
 

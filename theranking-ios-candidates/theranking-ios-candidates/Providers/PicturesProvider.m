@@ -13,7 +13,6 @@
 static NSInteger const kNumberOfPhotos = 60;
 static NSInteger const kImageSize = 4;
 static NSString * const kPhotosKey = @"photos";
-static NSString * const kPictureEntityName = @"PictureEntity";
 
 @implementation PicturesProvider
 
