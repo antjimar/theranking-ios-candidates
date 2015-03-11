@@ -10,6 +10,8 @@
 #import "PictureCollectionViewCell.h"
 #import "PictureEntity.h"
 #import "LoadPicturesInteractor.h"
+#import "LoadPictureDetailsInteractor.h"
+#import "DetailPictureViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *cellId = @"PictureCellId";
@@ -73,7 +75,12 @@ static NSString *cellId = @"PictureCellId";
 
 #pragma mark - UICollectionViewDelegate Methods
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PictureEntity *picture = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LoadPictureDetailsInteractor *loadDetailsInteractor = [[LoadPictureDetailsInteractor alloc] initWithCoreDataStack:self.coreDataStack];
+    PictureEntity *detailPicture = [loadDetailsInteractor loadDetailsForPicture:picture];
     
+    DetailPictureViewController *detailVC = [[DetailPictureViewController alloc] initWithModel:detailPicture];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - Registration Methods
@@ -94,8 +101,6 @@ static NSString *cellId = @"PictureCellId";
     [self.activityIndicator stopAnimating];
     [self.activityIndicator setHidden:YES];
     [self.labelIndicator removeFromSuperview];
-//    [self.labelIndicator setHidden:YES];
-
 }
 
 #pragma mark - Utils Methods

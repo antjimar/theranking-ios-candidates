@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 @class PictureEntity;
 
 @interface DetailPictureViewController : UIViewController
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cameraShutterSpeedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cameraApertureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pictureDescriptionLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *pictureMapView;
 
 
 

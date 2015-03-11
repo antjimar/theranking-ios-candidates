@@ -13,6 +13,7 @@
                 <outlet property="cameraLensLabel" destination="ppX-Pr-QZ5" id="7kp-bj-j59"/>
                 <outlet property="cameraShutterSpeedLabel" destination="8fK-vu-EbZ" id="lBz-hE-WRU"/>
                 <outlet property="pictureDescriptionLabel" destination="J2Y-Oy-QTc" id="SPv-bX-PEn"/>
+                <outlet property="pictureMapView" destination="G8W-hy-VyI" id="kbA-CF-Igg"/>
                 <outlet property="userFullNameLabel" destination="wKK-3O-Gb3" id="k5a-5o-c7Y"/>
                 <outlet property="userImageView" destination="zLP-HU-qCv" id="ezJ-Tt-WGG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,7 +56,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.87209732699469023" blue="0.44997485507786283" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="J2Y-Oy-QTc" secondAttribute="trailing" constant="8" id="8iz-5F-LJi"/>
                                         <constraint firstItem="J2Y-Oy-QTc" firstAttribute="top" secondItem="tiH-65-ITM" secondAttribute="bottom" constant="8" id="Drr-gm-0qQ"/>
@@ -193,7 +193,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.71456824439568667" green="1" blue="0.48414014927748816" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="eVu-Pm-2YR" firstAttribute="leading" secondItem="R1o-0G-VTL" secondAttribute="leading" constant="8" id="0ZJ-Ix-3Zb"/>
                                         <constraint firstItem="EOq-sQ-Ly3" firstAttribute="top" secondItem="R1o-0G-VTL" secondAttribute="top" constant="8" id="3PW-CJ-wim"/>
@@ -241,7 +240,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="zLP-HU-qCv" firstAttribute="leading" secondItem="Af2-e0-fDN" secondAttribute="leading" constant="22" id="FeN-AC-SOQ"/>
                                         <constraint firstAttribute="height" constant="156" id="Ot7-mP-sdh"/>

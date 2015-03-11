@@ -8,6 +8,7 @@
 
 #import "DetailPictureViewController.h"
 #import "PictureEntity+Builder.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DetailPictureViewController ()
 
@@ -22,6 +23,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         _pictureModel = pictureModel;
+        self.title = pictureModel.pictureName;
     }
     
     return self;
@@ -39,7 +41,25 @@
 
 #pragma mark - Utils Methods
 - (void)syncModelWithView {
-    
+//    [self.userImageView sd_cancelCurrentImageLoad];
+
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:self.pictureModel.pictureUserAvatarURL]
+                          placeholderImage:[UIImage imageNamed:@"500px-logo1"]];
+
+    self.userFullNameLabel.text = self.pictureModel.pictureUserFullName;
+    self.cameraLabel.text = self.pictureModel.pictureCamera;
+    self.cameraLensLabel.text = self.pictureModel.pictureCameraLens;
+    self.cameraFocalLenthLabel.text = self.pictureModel.pictureCameraFocalLength;
+    self.cameraIsoLabel.text = self.pictureModel.pictureCameraISO;
+    self.cameraShutterSpeedLabel.text = self.pictureModel.pictureCameraShutterSpeed;
+    self.cameraApertureLabel.text = self.pictureModel.pictureCameraAperture;
+    self.pictureDescriptionLabel.text = self.pictureModel.pictureDescription;
 }
+
+
+
+
+
+
 
 @end
