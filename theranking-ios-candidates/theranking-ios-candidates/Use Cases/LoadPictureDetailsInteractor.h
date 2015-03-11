@@ -7,10 +7,12 @@
 //
 
 #import "BaseInteractor.h"
+#import "CoreDataStack.h"
 @class PictureEntity;
 
 @interface LoadPictureDetailsInteractor : BaseInteractor
 
+- (instancetype)initWithCoreDataStack:(CoreDataStack *)coreDataStack;
 - (PictureEntity *)showDetailsForPicture:(PictureEntity *)picture;
 
 @end

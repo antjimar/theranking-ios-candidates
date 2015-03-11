@@ -7,6 +7,7 @@
 //
 
 #import "BaseInteractor.h"
+#import "CoreDataStack.h"
 @class PicturesProvider;
 @class PictureEntity;
 
@@ -14,6 +15,7 @@
 
 @property (strong, nonatomic) PicturesProvider *pictureProvider;
 
+- (instancetype)initWithCoreDataStack:(CoreDataStack *)coreDataStack;
 - (void)listOfPicuresWithCompletionBlock:(void(^)(NSArray *pictures))completion;
 
 @end

@@ -9,7 +9,10 @@
 #import "CoreDataStack.h"
 
 @interface CoreDataStack ()
+
 @property (copy, nonatomic) NSString *modelName;
+@property (strong, nonatomic) NSNotificationCenter *notificationCenter;
+
 @end
 
 @implementation CoreDataStack
@@ -78,6 +81,7 @@
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    [self registerForChangesInManageObjectContextNotifications];
     return _managedObjectContext;
 }
 - (NSManagedObjectContext *)backgroundManagedObjectContext {
@@ -108,5 +112,40 @@
         }
     }
 }
+
+- (void)dealloc {
+    [self deregisterForChangesInManageObjectContextNotifications];
+}
+
+#pragma mark - Notifications Methods
+- (void)registerForChangesInManageObjectContextNotifications {
+    [self.notificationCenter addObserver:self
+                                selector:@selector(mergeChangesSavedToContext:)
+                                    name:NSManagedObjectContextDidSaveNotification
+                                  object:self.backgroundManagedObjectContext];
+}
+- (void)deregisterForChangesInManageObjectContextNotifications {
+    [self.notificationCenter removeObserver:self
+                                       name:NSManagedObjectContextDidSaveNotification
+                                     object:self.backgroundManagedObjectContext];
+}
+
+#pragma mark - Notification Action Methods
+- (void)mergeChangesSavedToContext:(NSNotification *)notification {
+    __weak typeof(self) weakSelf = self;
+    [self.managedObjectContext performBlock:^{
+        __strong typeof(weakSelf) self = weakSelf;
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
+
+#pragma mark - Lazy instantiation properties for dependency injection Methods
+- (NSNotificationCenter *)notificationCenter {
+    if (_notificationCenter == nil) {
+        _notificationCenter = [NSNotificationCenter defaultCenter];
+    }
+    return _notificationCenter;
+}
+
 
 @end

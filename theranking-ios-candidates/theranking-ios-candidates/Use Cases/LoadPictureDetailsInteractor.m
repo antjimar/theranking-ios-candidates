@@ -11,17 +11,15 @@
 #import "CoreDataStack.h"
 
 static NSString * const kPictureEntityName = @"PictureEntity";
-static NSString * const kModelName = @"theranking_ios_candidates";
 
 @implementation LoadPictureDetailsInteractor
 
 @synthesize backgroundManagedObjectContext = _backgroundManagedObjectContext;
 
-- (instancetype)init
-{
+- (instancetype)initWithCoreDataStack:(CoreDataStack *)coreDataStack {
     self = [super init];
     if (self) {
-        _backgroundManagedObjectContext = [[[CoreDataStack alloc] initWithModelName:kModelName] backgroundManagedObjectContext];
+        _backgroundManagedObjectContext = coreDataStack.backgroundManagedObjectContext;
     }
     return self;
 }

@@ -7,12 +7,14 @@
 //
 
 #import "BaseProvider.h"
+#import "CoreDataStack.h"
 
 typedef void (^SuccessBlock)(id data);
 typedef void (^ErrorBlock)(id data, NSError *error);
 
 @interface PicturesProvider : BaseProvider
 
+- (instancetype)initWithBackgroundManagedObjectContext:(NSManagedObjectContext *)backgroundManagedObjectContext;
 - (void)loadPicturesWithSuccess:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
 
 @end

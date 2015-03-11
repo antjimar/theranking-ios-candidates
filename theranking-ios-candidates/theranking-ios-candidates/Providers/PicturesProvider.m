@@ -14,16 +14,15 @@ static NSInteger const kNumberOfPhotos = 60;
 static NSInteger const kImageSize = 4;
 static NSString * const kPhotosKey = @"photos";
 static NSString * const kPictureEntityName = @"PictureEntity";
-static NSString * const kModelName = @"theranking_ios_candidates";
 
 @implementation PicturesProvider
 
-@synthesize backgrounManagedObjectContext = _backgrounManagedObjectContext;
+@synthesize backgroundManagedObjectContext = _backgroundManagedObjectContext;
 
-- (instancetype)init {
+- (instancetype)initWithBackgroundManagedObjectContext:(NSManagedObjectContext *)backgroundManagedObjectContext {
     self = [super init];
     if (self) {
-        _backgrounManagedObjectContext = [[[CoreDataStack alloc] initWithModelName:kModelName] backgroundManagedObjectContext];
+        _backgroundManagedObjectContext = backgroundManagedObjectContext;
     }
     return self;
 }
@@ -56,24 +55,24 @@ static NSString * const kModelName = @"theranking_ios_candidates";
 - (void)updateDataBaseWithNewPictures:(NSArray *)newPictures withCompletion:(void(^)(NSArray *pictures))completion {
     // Get last data saved in core data, delete and insert new data from rest service in background
     __weak typeof(self) weakSelf = self;
-    [self.backgrounManagedObjectContext performBlock:^{
+    [self.backgroundManagedObjectContext performBlock:^{
         __strong typeof(weakSelf) self = weakSelf;
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
-        NSArray *lastPicturesSaved = [self.backgrounManagedObjectContext executeFetchRequest:fetchRequest error:nil];
+        NSArray *lastPicturesSaved = [self.backgroundManagedObjectContext executeFetchRequest:fetchRequest error:nil];
         for (PictureEntity *lastPicture in lastPicturesSaved) {
-            [self.backgrounManagedObjectContext deleteObject:lastPicture];
+            [self.backgroundManagedObjectContext deleteObject:lastPicture];
         }
         
         NSMutableArray *pictures = [[NSMutableArray alloc] init];
         // Save newPictures array
         for (NSDictionary *newPicture in newPictures) {
             PictureEntity *picture = [NSEntityDescription insertNewObjectForEntityForName:kPictureEntityName
-                                                                   inManagedObjectContext:self.backgrounManagedObjectContext];
+                                                                   inManagedObjectContext:self.backgroundManagedObjectContext];
             [PictureEntity pictureFromDictionary:newPicture inPicture:picture];
             [pictures addObject:picture];
         }
         NSError *error = nil;
-        [self.backgrounManagedObjectContext save:&error];
+        [self.backgroundManagedObjectContext save:&error];
         completion([pictures copy]);
     }];
 }
