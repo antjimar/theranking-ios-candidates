@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		795B08221AAF6AEA0049BFA9 /* RequestManagerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */; };
 		795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */; };
+		79DEC9171AB04EE50070E946 /* AJCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC9161AB04EE50070E946 /* AJCoreDataCollectionViewController.m */; };
 		79EB8D2B1AAEFC1E00E6E6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2A1AAEFC1E00E6E6F2 /* main.m */; };
 		79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */; };
 		79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */; };
@@ -45,6 +46,8 @@
 		795B08211AAF6AEA0049BFA9 /* RequestManagerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManagerFactory.m; sourceTree = "<group>"; };
 		795B08251AAF6B8B0049BFA9 /* NetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkFetcher.h; sourceTree = "<group>"; };
 		795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkFetcher.m; sourceTree = "<group>"; };
+		79DEC9151AB04EE50070E946 /* AJCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCoreDataCollectionViewController.h; sourceTree = "<group>"; };
+		79DEC9161AB04EE50070E946 /* AJCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCoreDataCollectionViewController.m; sourceTree = "<group>"; };
 		79EB8D251AAEFC1E00E6E6F2 /* theranking-ios-candidates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "theranking-ios-candidates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB8D291AAEFC1E00E6E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79EB8D2A1AAEFC1E00E6E6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				79EB8D8A1AAF653800E6E6F2 /* MainPictureViewController.m */,
 				79EB8D8C1AAF655400E6E6F2 /* DetailPictureViewController.h */,
 				79EB8D8D1AAF655400E6E6F2 /* DetailPictureViewController.m */,
+				79DEC9151AB04EE50070E946 /* AJCoreDataCollectionViewController.h */,
+				79DEC9161AB04EE50070E946 /* AJCoreDataCollectionViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				79EB8D871AAF64F700E6E6F2 /* PictureCollectionViewCell.m in Sources */,
 				79EB8D7C1AAF62F900E6E6F2 /* PictureEntity.m in Sources */,
 				79EB8D571AAF0B5B00E6E6F2 /* BaseInteractor.m in Sources */,
+				79DEC9171AB04EE50070E946 /* AJCoreDataCollectionViewController.m in Sources */,
 				79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */,
 				79EB8D981AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m in Sources */,
 				79EB8D821AAF648200E6E6F2 /* BaseProvider.m in Sources */,
