@@ -12,6 +12,7 @@
                 <outlet property="cameraLabel" destination="3zI-8e-Ikw" id="mcN-YX-RV4"/>
                 <outlet property="cameraLensLabel" destination="ppX-Pr-QZ5" id="7kp-bj-j59"/>
                 <outlet property="cameraShutterSpeedLabel" destination="8fK-vu-EbZ" id="lBz-hE-WRU"/>
+                <outlet property="heightMapConstraint" destination="6Z5-jj-Jih" id="emt-pf-LQ0"/>
                 <outlet property="pictureDescriptionLabel" destination="J2Y-Oy-QTc" id="SPv-bX-PEn"/>
                 <outlet property="pictureMapView" destination="G8W-hy-VyI" id="kbA-CF-Igg"/>
                 <outlet property="userFullNameLabel" destination="wKK-3O-Gb3" id="k5a-5o-c7Y"/>
@@ -31,7 +32,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="685"/>
                             <subviews>
                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-hy-VyI">
-                                    <rect key="frame" x="0.0" y="471" width="600" height="197"/>
+                                    <rect key="frame" x="0.0" y="481" width="600" height="197"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="197" id="6Z5-jj-Jih"/>
                                     </constraints>
@@ -232,9 +233,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User full name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKK-3O-Gb3">
-                                            <rect key="frame" x="149" y="67" width="420" height="20.5"/>
+                                            <rect key="frame" x="149" y="67" width="350" height="20.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="420" id="KXE-lJ-4Cl"/>
+                                                <constraint firstAttribute="width" constant="350" id="KXE-lJ-4Cl"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -269,7 +270,7 @@
                                 <constraint firstAttribute="bottom" secondItem="G8W-hy-VyI" secondAttribute="bottom" id="mbv-ox-Lag"/>
                                 <constraint firstItem="Af2-e0-fDN" firstAttribute="leading" secondItem="Q9v-xD-rxi" secondAttribute="leading" id="vfV-9h-lwM"/>
                                 <constraint firstItem="R1o-0G-VTL" firstAttribute="width" secondItem="Q9v-xD-rxi" secondAttribute="width" id="xZo-rG-kgj"/>
-                                <constraint firstItem="G8W-hy-VyI" firstAttribute="top" secondItem="0dh-Sf-HOy" secondAttribute="bottom" id="yJg-22-Mev"/>
+                                <constraint firstItem="G8W-hy-VyI" firstAttribute="top" secondItem="0dh-Sf-HOy" secondAttribute="bottom" constant="10" id="yJg-22-Mev"/>
                             </constraints>
                         </scrollView>
                     </subviews>
