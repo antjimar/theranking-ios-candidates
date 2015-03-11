@@ -33,6 +33,8 @@
         } else {
             errorBlock(nil, error);
         }
+        
+        [session finishTasksAndInvalidate];
     }];
     [task resume];
 }

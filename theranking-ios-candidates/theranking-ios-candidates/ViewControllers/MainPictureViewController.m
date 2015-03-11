@@ -51,7 +51,6 @@ static NSString *cellId = @"PictureCellId";
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     // Stop activity because we have data :)
     [self stopActivityIndicator];
-
     PictureEntity *picture = [self.fetchedResultsController objectAtIndexPath:indexPath];
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
                                                                                 forIndexPath:indexPath];
@@ -59,7 +58,6 @@ static NSString *cellId = @"PictureCellId";
     cell.ratingLabel.text = [NSString stringWithFormat:@"%@", picture.pictureRating];
     [cell.pictureImageView sd_setImageWithURL:[NSURL URLWithString:picture.pictureImgURL]
                              placeholderImage:[UIImage imageNamed:@"500px-logo1"]];
-    // Devolverla
     return cell;
 }
 
