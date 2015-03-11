@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AJCoreDataCollectionViewController.h"
 
-@interface MainPictureViewController : UIViewController
+@interface MainPictureViewController : AJCoreDataCollectionViewController
 
 @end
