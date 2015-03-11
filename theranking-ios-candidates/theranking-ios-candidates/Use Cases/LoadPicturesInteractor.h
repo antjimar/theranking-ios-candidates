@@ -15,4 +15,5 @@
 @property (strong, nonatomic) PicturesProvider *pictureProvider;
 
 - (void)listOfPicuresWithCompletionBlock:(void(^)(NSArray *pictures))completion;
+
 @end

@@ -8,21 +8,27 @@
 
 #import "PicturesProvider.h"
 #import "PictureEntity+Builder.h"
+#import "CoreDataStack.h"
 
 static NSInteger const kNumberOfPhotos = 60;
 static NSInteger const kImageSize = 4;
 static NSString * const kPhotosKey = @"photos";
 static NSString * const kPictureEntityName = @"PictureEntity";
+static NSString * const kModelName = @"theranking_ios_candidates";
 
 @implementation PicturesProvider
 
-- (void)loadPicturesWithSuccess:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
-    // Read from core data
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
-    NSArray *pictures = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    successBlock(pictures);
+@synthesize backgrounManagedObjectContext = _backgrounManagedObjectContext;
 
-    
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _backgrounManagedObjectContext = [[[CoreDataStack alloc] initWithModelName:kModelName] backgroundManagedObjectContext];
+    }
+    return self;
+}
+
+- (void)loadPicturesWithSuccess:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
     // Download from API Rest
     NSDictionary* URLParams = @{
                                 @"feature": @"popular",
@@ -31,62 +37,46 @@ static NSString * const kPictureEntityName = @"PictureEntity";
                                 };
     [self.requestManager GET:self.requestManager.baseDomain parameters:URLParams completion:^(id data) {
         NSMutableArray *pictures = [NSMutableArray array];
-        NSDictionary *picturesDictionary = [PictureEntity dictionaryFromData:data];
+        NSDictionary *picturesDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         for (NSDictionary *dict in picturesDictionary[kPhotosKey]) {
-            NSString *pictureId = [NSString stringWithFormat:@"%@", dict[@"id"]];
-            if (![self existPictureInDataBase:pictureId]) {
-                PictureEntity *picture = [NSEntityDescription insertNewObjectForEntityForName:kPictureEntityName
-                                                                       inManagedObjectContext:self.managedObjectContext];
-                [self parseFromDictionary:dict picture:picture];
-                [pictures addObject:picture];
-            }
+            [pictures addObject:dict];
         }
-        NSError *errorSave;
-        [self.managedObjectContext save:&errorSave];
+        // Update Data Base (Core Data)
+        [self updateDataBaseWithNewPictures:[pictures copy] withCompletion:^(NSArray *pictures) {
+            successBlock(pictures);
+        }];
         
     } error:^(id data, NSError *error) {
         errorBlock(nil, error);
     }];
 }
 
-#pragma mark - Utils Methods
-- (void)parseFromDictionary:(NSDictionary *)dict picture:(PictureEntity *)picture {
-    picture.pictureId = [NSString stringWithFormat:@"%@", dict[@"id"]];
-    picture.pictureImgURL = [self objectFromDictVal:dict[@"image_url"]];
-    picture.pictureName = [self objectFromDictVal:dict[@"name"]];
-    picture.pictureRating = @([[self objectFromDictVal:dict[@"rating"]] floatValue]);
-    picture.pictureDescription = [self objectFromDictVal:dict[@"description"]];
-    picture.pictureUserFullName = [self objectFromDictVal:dict[@"fullname"]];
-    picture.pictureUserAvatarURL = [self objectFromDictVal:dict[@"userpic_url"]];
-    picture.pictureCamera = [self objectFromDictVal:dict[@"camera"]];
-    picture.pictureCameraLens = [self objectFromDictVal:dict[@"lens"]];
-    picture.pictureCameraFocalLength = [self objectFromDictVal:dict[@"focal_length"]];
-    picture.pictureCameraISO = [self objectFromDictVal:dict[@"iso"]];
-    picture.pictureCameraShutterSpeed = [self objectFromDictVal:dict[@"shutter_speed"]];
-    picture.pictureCameraAperture = [self objectFromDictVal:dict[@"aperture"]];
-    picture.pictureLatitud = @([[self objectFromDictVal:dict[@"latitud"]] doubleValue]);
-    picture.pictureLongitud = @([[self objectFromDictVal:dict[@"longitud"]] doubleValue]);
-}
-- (BOOL)existPictureInDataBase:(NSString *)pictureId {
-    BOOL result = NO;
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"pictureId", [NSString stringWithFormat:@"%@", pictureId]];
-    NSArray *pictures = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-    if (pictures.count > 0) {
-        result = YES;
-    }
-    return result;
-}
-- (id)objectFromDictVal:(id)val {
-    id returnVal;
-    if([val isEqual:[NSNull null]] || val == nil){
-        returnVal = nil;
-    } else {
-        returnVal = val;
-    }
-    return returnVal;
-}
 
+#pragma mark - Utils Methods
+- (void)updateDataBaseWithNewPictures:(NSArray *)newPictures withCompletion:(void(^)(NSArray *pictures))completion {
+    // Get last data saved in core data, delete and insert new data from rest service in background
+    __weak typeof(self) weakSelf = self;
+    [self.backgrounManagedObjectContext performBlock:^{
+        __strong typeof(weakSelf) self = weakSelf;
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
+        NSArray *lastPicturesSaved = [self.backgrounManagedObjectContext executeFetchRequest:fetchRequest error:nil];
+        for (PictureEntity *lastPicture in lastPicturesSaved) {
+            [self.backgrounManagedObjectContext deleteObject:lastPicture];
+        }
+        
+        NSMutableArray *pictures = [[NSMutableArray alloc] init];
+        // Save newPictures array
+        for (NSDictionary *newPicture in newPictures) {
+            PictureEntity *picture = [NSEntityDescription insertNewObjectForEntityForName:kPictureEntityName
+                                                                   inManagedObjectContext:self.backgrounManagedObjectContext];
+            [PictureEntity pictureFromDictionary:newPicture inPicture:picture];
+            [pictures addObject:picture];
+        }
+        NSError *error = nil;
+        [self.backgrounManagedObjectContext save:&error];
+        completion([pictures copy]);
+    }];
+}
 
 @end
 

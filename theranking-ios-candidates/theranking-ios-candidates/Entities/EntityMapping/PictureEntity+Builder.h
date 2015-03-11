@@ -10,6 +10,6 @@
 
 @interface PictureEntity (Builder)
 
-+ (NSDictionary *)dictionaryFromData:(NSData *)data;
++ (void)pictureFromDictionary:(NSDictionary *)pictureDictionary inPicture:(PictureEntity *)picture;
 
 @end

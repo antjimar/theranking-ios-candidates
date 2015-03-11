@@ -10,5 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @interface BaseInteractor : NSObject
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+
 @end

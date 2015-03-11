@@ -23,7 +23,6 @@
 -(PicturesProvider *)pictureProvider {
     if (!_pictureProvider) {
         _pictureProvider = [[PicturesProvider alloc] init];
-        _pictureProvider.managedObjectContext = self.managedObjectContext;
     }
     return _pictureProvider;
 }

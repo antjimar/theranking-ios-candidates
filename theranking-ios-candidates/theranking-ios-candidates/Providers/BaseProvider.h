@@ -15,6 +15,6 @@ extern NSString * const kConsumerKey;
 @interface BaseProvider : NSObject
 
 @property (strong, nonatomic) id<RequestManager> requestManager;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *backgrounManagedObjectContext;
 
 @end
