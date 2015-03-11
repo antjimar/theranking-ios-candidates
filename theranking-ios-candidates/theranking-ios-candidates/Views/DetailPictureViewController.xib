@@ -31,13 +31,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="685"/>
                             <subviews>
                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-hy-VyI">
-                                    <rect key="frame" x="0.0" y="479" width="600" height="197"/>
+                                    <rect key="frame" x="0.0" y="415" width="600" height="197"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="197" id="6Z5-jj-Jih"/>
                                     </constraints>
                                 </mapView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-Sf-HOy">
-                                    <rect key="frame" x="0.0" y="363" width="600" height="116"/>
+                                    <rect key="frame" x="0.0" y="299" width="600" height="116"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiH-65-ITM">
                                             <rect key="frame" x="8" y="8" width="113" height="21"/>
@@ -66,7 +66,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-0G-VTL">
-                                    <rect key="frame" x="0.0" y="220" width="600" height="144"/>
+                                    <rect key="frame" x="0.0" y="156" width="600" height="144"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMERA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOq-sQ-Ly3">
                                             <rect key="frame" x="8" y="8" width="72" height="21"/>
@@ -222,7 +222,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af2-e0-fDN">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="156"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLP-HU-qCv">
                                             <rect key="frame" x="22" y="30" width="95" height="95"/>
@@ -258,7 +258,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Af2-e0-fDN" secondAttribute="trailing" id="Qqb-GY-Hmz"/>
                                 <constraint firstItem="R1o-0G-VTL" firstAttribute="width" secondItem="Q9v-xD-rxi" secondAttribute="width" id="RzD-ov-mo3"/>
                                 <constraint firstAttribute="trailing" secondItem="G8W-hy-VyI" secondAttribute="trailing" id="TdR-sv-u4V"/>
-                                <constraint firstItem="Af2-e0-fDN" firstAttribute="top" secondItem="Q9v-xD-rxi" secondAttribute="top" constant="64" id="Tvz-OA-wUh"/>
+                                <constraint firstItem="Af2-e0-fDN" firstAttribute="top" secondItem="Q9v-xD-rxi" secondAttribute="top" id="Tvz-OA-wUh"/>
                                 <constraint firstAttribute="width" secondItem="0dh-Sf-HOy" secondAttribute="width" id="UXE-4M-Cyf"/>
                                 <constraint firstItem="G8W-hy-VyI" firstAttribute="leading" secondItem="Q9v-xD-rxi" secondAttribute="leading" id="Ui4-0u-2iv"/>
                                 <constraint firstItem="0dh-Sf-HOy" firstAttribute="top" secondItem="R1o-0G-VTL" secondAttribute="bottom" constant="-1" id="VOM-Ku-VwF"/>
