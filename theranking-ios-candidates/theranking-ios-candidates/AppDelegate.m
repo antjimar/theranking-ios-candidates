@@ -20,9 +20,6 @@ static CGFloat const kMarginCells = 30.0f;
 
 @implementation AppDelegate
 
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.coreDataStack = [[CoreDataStack alloc] initWithModelName:kModelName];
@@ -32,7 +29,9 @@ static CGFloat const kMarginCells = 30.0f;
     NSFetchedResultsController *results = [self setupNSFetchResultsController];
     
     MainPictureViewController *mainViewController = [[MainPictureViewController alloc] initWithFetchedResultsController:results
-                                                                                                                 layout:layout];
+                                                                                                                 layout:layout
+                                                                                                           andIndicator:nil];
+    mainViewController.coreDataStack = self.coreDataStack;
     UINavigationController *navigatinoVC = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     [self.window setRootViewController:navigatinoVC];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -73,7 +72,7 @@ static CGFloat const kMarginCells = 30.0f;
 }
 - (NSFetchedResultsController *)setupNSFetchResultsController {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:PictureEntityAttributes.pictureRating ascending:YES]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:PictureEntityAttributes.pictureRating ascending:NO]];
     
     NSFetchedResultsController *results = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                               managedObjectContext:self.coreDataStack.managedObjectContext

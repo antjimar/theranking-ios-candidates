@@ -59,7 +59,7 @@
 }
 - (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-# warning rewite in the subclas
+//# warning. re-write in the subclas
     [NSException raise:NSInvalidArgumentException format:@"%@-%@ should be overriden by its subclass",
      NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
     return nil;
