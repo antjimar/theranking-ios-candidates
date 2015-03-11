@@ -29,7 +29,6 @@
 		79EB8D901AAF655400E6E6F2 /* DetailPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EB8D8E1AAF655400E6E6F2 /* DetailPictureViewController.xib */; };
 		79EB8D921AAF66CC00E6E6F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EB8D911AAF66CC00E6E6F2 /* LaunchScreen.xib */; };
 		79EB8D951AAF685400E6E6F2 /* LoadPicturesInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D941AAF685400E6E6F2 /* LoadPicturesInteractor.m */; };
-		79EB8D981AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D971AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m */; };
 		79EB8D9B1AAF68A300E6E6F2 /* PicturesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D9A1AAF68A300E6E6F2 /* PicturesProvider.m */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +84,6 @@
 		79EB8D911AAF66CC00E6E6F2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		79EB8D931AAF685400E6E6F2 /* LoadPicturesInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadPicturesInteractor.h; sourceTree = "<group>"; };
 		79EB8D941AAF685400E6E6F2 /* LoadPicturesInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadPicturesInteractor.m; sourceTree = "<group>"; };
-		79EB8D961AAF687100E6E6F2 /* LoadPictureDetailsInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadPictureDetailsInteractor.h; sourceTree = "<group>"; };
-		79EB8D971AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadPictureDetailsInteractor.m; sourceTree = "<group>"; };
 		79EB8D991AAF68A300E6E6F2 /* PicturesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesProvider.h; sourceTree = "<group>"; };
 		79EB8D9A1AAF68A300E6E6F2 /* PicturesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesProvider.m; sourceTree = "<group>"; };
 		DAB6F5F1D1B93601FAD92C1B /* Pods-theranking-ios-candidates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theranking-ios-candidates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-theranking-ios-candidates/Pods-theranking-ios-candidates.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,8 +235,6 @@
 				79EB8D561AAF0B5B00E6E6F2 /* BaseInteractor.m */,
 				79EB8D931AAF685400E6E6F2 /* LoadPicturesInteractor.h */,
 				79EB8D941AAF685400E6E6F2 /* LoadPicturesInteractor.m */,
-				79EB8D961AAF687100E6E6F2 /* LoadPictureDetailsInteractor.h */,
-				79EB8D971AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -426,7 +421,6 @@
 				79EB8D571AAF0B5B00E6E6F2 /* BaseInteractor.m in Sources */,
 				79DEC9171AB04EE50070E946 /* AJCoreDataCollectionViewController.m in Sources */,
 				79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */,
-				79EB8D981AAF687100E6E6F2 /* LoadPictureDetailsInteractor.m in Sources */,
 				79EB8D821AAF648200E6E6F2 /* BaseProvider.m in Sources */,
 				795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */,
 			);

@@ -8,7 +8,7 @@
 
 #import "MainPictureViewController.h"
 #import "PictureCollectionViewCell.h"
-#import "PictureEntity.h"
+#import "PictureEntity+Builder.h"
 #import "LoadPicturesInteractor.h"
 #import "LoadPictureDetailsInteractor.h"
 #import "DetailPictureViewController.h"
@@ -75,11 +75,8 @@ static NSString *cellId = @"PictureCellId";
 
 #pragma mark - UICollectionViewDelegate Methods
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    PictureEntity *picture = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    LoadPictureDetailsInteractor *loadDetailsInteractor = [[LoadPictureDetailsInteractor alloc] initWithCoreDataStack:self.coreDataStack];
-    PictureEntity *detailPicture = [loadDetailsInteractor loadDetailsForPicture:picture];
-    
-    DetailPictureViewController *detailVC = [[DetailPictureViewController alloc] initWithModel:detailPicture];
+    PictureEntity *picture = (PictureEntity *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    DetailPictureViewController *detailVC = [[DetailPictureViewController alloc] initWithModel:picture];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

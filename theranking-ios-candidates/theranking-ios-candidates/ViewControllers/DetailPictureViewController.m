@@ -23,7 +23,6 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         _pictureModel = pictureModel;
-        self.title = pictureModel.pictureName;
     }
     
     return self;
@@ -31,17 +30,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userImageView.clipsToBounds = YES;
+    self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.height / 2.0f;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.title = self.pictureModel.pictureName;
     [self syncModelWithView];
 }
 
 #pragma mark - Utils Methods
 - (void)syncModelWithView {
-//    [self.userImageView sd_cancelCurrentImageLoad];
+    [self.userImageView sd_cancelCurrentImageLoad];
 
     [self.userImageView sd_setImageWithURL:[NSURL URLWithString:self.pictureModel.pictureUserAvatarURL]
                           placeholderImage:[UIImage imageNamed:@"500px-logo1"]];
