@@ -20,14 +20,14 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9v-xD-rxi">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="685"/>
                             <subviews>
-                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-hy-VyI">
-                                    <rect key="frame" x="0.0" y="488" width="600" height="197"/>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-hy-VyI">
+                                    <rect key="frame" x="0.0" y="479" width="600" height="197"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="197" id="6Z5-jj-Jih"/>
                                     </constraints>
                                 </mapView>
-                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-Sf-HOy">
-                                    <rect key="frame" x="0.0" y="363" width="600" height="128"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-Sf-HOy">
+                                    <rect key="frame" x="0.0" y="363" width="600" height="116"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiH-65-ITM">
                                             <rect key="frame" x="8" y="8" width="113" height="21"/>
@@ -39,8 +39,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-Oy-QTc">
-                                            <rect key="frame" x="8" y="37" width="584" height="80"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-Oy-QTc">
+                                            <rect key="frame" x="8" y="37" width="584" height="71"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                             <nil key="highlightedColor"/>
@@ -103,8 +103,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shutter speed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjq-wf-GQc">
-                                            <rect key="frame" x="337" y="33" width="113" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shutter speed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjq-wf-GQc">
+                                            <rect key="frame" x="337" y="32" width="113" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Fn3-df-mhy"/>
                                                 <constraint firstAttribute="width" constant="113" id="LfM-ZE-bOj"/>
@@ -204,11 +204,17 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af2-e0-fDN">
                                     <rect key="frame" x="0.0" y="64" width="600" height="156"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLP-HU-qCv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLP-HU-qCv">
                                             <rect key="frame" x="22" y="30" width="95" height="95"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="95" id="Fk1-Sw-hlK"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User full name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKK-3O-Gb3">
-                                            <rect key="frame" x="149" y="67" width="420" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User full name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKK-3O-Gb3">
+                                            <rect key="frame" x="149" y="67.5" width="420" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="420" id="KXE-lJ-4Cl"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -216,7 +222,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="zLP-HU-qCv" firstAttribute="leading" secondItem="Af2-e0-fDN" secondAttribute="leading" constant="22" id="FeN-AC-SOQ"/>
                                         <constraint firstAttribute="height" constant="156" id="Ot7-mP-sdh"/>
+                                        <constraint firstItem="zLP-HU-qCv" firstAttribute="top" secondItem="Af2-e0-fDN" secondAttribute="top" constant="30" id="iUZ-r6-hL6"/>
+                                        <constraint firstItem="wKK-3O-Gb3" firstAttribute="leading" secondItem="zLP-HU-qCv" secondAttribute="trailing" constant="32" id="p9V-M3-Ugk"/>
+                                        <constraint firstAttribute="centerY" secondItem="zLP-HU-qCv" secondAttribute="centerY" constant="0.5" id="u8D-fH-r9R"/>
+                                        <constraint firstItem="wKK-3O-Gb3" firstAttribute="centerY" secondItem="zLP-HU-qCv" secondAttribute="centerY" id="wfa-f6-2eP"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -238,7 +249,7 @@
                                 <constraint firstAttribute="bottom" secondItem="G8W-hy-VyI" secondAttribute="bottom" id="mbv-ox-Lag"/>
                                 <constraint firstItem="Af2-e0-fDN" firstAttribute="leading" secondItem="Q9v-xD-rxi" secondAttribute="leading" id="vfV-9h-lwM"/>
                                 <constraint firstItem="R1o-0G-VTL" firstAttribute="width" secondItem="Q9v-xD-rxi" secondAttribute="width" id="xZo-rG-kgj"/>
-                                <constraint firstItem="G8W-hy-VyI" firstAttribute="top" secondItem="0dh-Sf-HOy" secondAttribute="bottom" constant="-3" id="yJg-22-Mev"/>
+                                <constraint firstItem="G8W-hy-VyI" firstAttribute="top" secondItem="0dh-Sf-HOy" secondAttribute="bottom" id="yJg-22-Mev"/>
                             </constraints>
                         </scrollView>
                     </subviews>
