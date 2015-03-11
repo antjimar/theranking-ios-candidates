@@ -9,22 +9,7 @@
 #import "PictureEntity+Builder.h"
 
 const struct PictureEntityAttributes PictureEntityAttributes = {
-    .pictureId = @"pictureId",
-    .pictureImgURL = @"pictureImgURL",
-    .pictureName = @"pictureName",
     .pictureRating = @"pictureRating",
-    .pictureDescription = @"pictureDescription",
-    .pictureUserFullName = @"pictureUserFullName",
-    .pictureUserAvatarURL = @"pictureUserAvatarURL",
-    .pictureCamera = @"pictureCamera",
-    .pictureCameraLens = @"pictureCameraLens",
-    .pictureCameraFocalLength = @"pictureCameraFocalLength",
-    .pictureCameraISO = @"pictureCameraISO",
-    .pictureCameraShutterSpeed = @"pictureCameraShutterSpeed",
-    .pictureCameraAperture = @"pictureCameraAperture",
-    .pictureLatitud = @"pictureLatitud",
-    .pictureLongitud = @"pictureLongitud",
-
 };
 
 static NSString * const kDotSeparator = @".";
