@@ -16,6 +16,7 @@
 
 #pragma mark - Core Data stack
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize backgroundManagedObjectContext = _backgroundManagedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
@@ -75,9 +76,23 @@
     if (!coordinator) {
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
+}
+- (NSManagedObjectContext *)backgroundManagedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_backgroundManagedObjectContext != nil) {
+        return _backgroundManagedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [_backgroundManagedObjectContext setPersistentStoreCoordinator:coordinator];
+    return _backgroundManagedObjectContext;
 }
 
 #pragma mark - Core Data Saving support
