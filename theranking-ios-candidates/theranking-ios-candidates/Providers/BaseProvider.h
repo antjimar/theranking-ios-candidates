@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 #import "RequestManager.h"
+@import CoreData;
 
 extern NSString * const kConsumerKey;
 

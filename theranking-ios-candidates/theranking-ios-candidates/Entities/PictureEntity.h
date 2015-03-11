@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
+@import CoreData;
 
 @interface PictureEntity : NSManagedObject
 
