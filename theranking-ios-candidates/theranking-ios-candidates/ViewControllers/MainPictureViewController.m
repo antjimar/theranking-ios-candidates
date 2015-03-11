@@ -39,20 +39,11 @@ static NSString *cellId = @"PictureCellId";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:222.0f/255.0f green:222.0f/255.0f blue:222.0f/255.0f alpha:0.8];
     [self registerNib];
-    
     [self setupAcitivityIndicator];
-    
-    LoadPicturesInteractor *loadPicturesInteractor = [[LoadPicturesInteractor alloc] initWithCoreDataStack:self.coreDataStack];
-    [loadPicturesInteractor listOfPicuresWithCompletionBlock:^(NSArray *pictures) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.activityIndicator.isAnimating) {
-                [self stopActivityIndicator];
-            }
-        });
-    }];
+    [self setupRefreshController];
+    [self loadDataFromServer:nil];
 }
 
 #pragma mark - Data Source Methods
@@ -99,7 +90,20 @@ static NSString *cellId = @"PictureCellId";
     [self.labelIndicator removeFromSuperview];
 }
 
-#pragma mark - Utils Methods
+#pragma mark - SetUp and Utils Methods
+- (void)loadDataFromServer:(id)sender {
+    LoadPicturesInteractor *loadPicturesInteractor = [[LoadPicturesInteractor alloc] initWithCoreDataStack:self.coreDataStack];
+    [loadPicturesInteractor listOfPicuresWithCompletionBlock:^(NSArray *pictures) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.activityIndicator.isAnimating) {
+                [self stopActivityIndicator];
+            }
+            if (sender) {
+                [(UIRefreshControl *)sender endRefreshing];
+            }
+        });
+    }];
+}
 - (void)setupAcitivityIndicator {
     // Center and start animating
     [self.view addSubview:self.activityIndicator];
@@ -117,6 +121,22 @@ static NSString *cellId = @"PictureCellId";
     label.text = text;
     
     return label;
+}
+- (void)setupRefreshController {
+    // Iniciamos el Refresh Control
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    
+    // Configuramos el Refresh Control
+    [refreshControl addTarget:self
+                       action:@selector(refresh:)
+             forControlEvents:UIControlEventValueChanged];
+    
+    // Se lo añadimos al viewController
+    [self.collectionView addSubview:refreshControl];
+    self.collectionView.alwaysBounceVertical = YES;
+}
+- (void)refresh:(id)sender {
+    [self loadDataFromServer:sender];
 }
 
 @end
