@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PictureEntity;
 
 @interface DetailPictureViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraLensLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraFocalLenthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraIsoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraShutterSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraApertureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pictureDescriptionLabel;
+
+
+
+
+- (instancetype)initWithModel:(PictureEntity *)pictureModel;
 
 @end

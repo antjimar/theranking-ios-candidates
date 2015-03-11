@@ -71,6 +71,11 @@ static NSString *cellId = @"PictureCellId";
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate Methods
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 #pragma mark - Registration Methods
 - (void)registerNib {
     UINib *nib = [UINib nibWithNibName:@"PictureCollectionViewCell" bundle:nil];

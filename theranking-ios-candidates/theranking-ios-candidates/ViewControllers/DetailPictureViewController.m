@@ -7,31 +7,39 @@
 //
 
 #import "DetailPictureViewController.h"
+#import "PictureEntity+Builder.h"
 
 @interface DetailPictureViewController ()
+
+@property (strong, nonatomic) PictureEntity *pictureModel;
 
 @end
 
 @implementation DetailPictureViewController
 
+#pragma mark - View lifecycle Methods
+- (instancetype)initWithModel:(PictureEntity *)pictureModel {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _pictureModel = pictureModel;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self syncModelWithView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Utils Methods
+- (void)syncModelWithView {
+    
 }
-*/
 
 @end
