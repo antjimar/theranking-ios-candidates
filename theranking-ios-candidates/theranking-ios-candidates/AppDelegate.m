@@ -22,6 +22,7 @@ static CGFloat const kMarginCells = 30.0f;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self customiseAppeareance];
     self.coreDataStack = [[CoreDataStack alloc] initWithModelName:kModelName];
     self.managedObjectContext = self.coreDataStack.managedObjectContext;
     
@@ -79,6 +80,19 @@ static CGFloat const kMarginCells = 30.0f;
                                                                                 sectionNameKeyPath:nil
                                                                                          cacheName:nil];
     return results;
+}
+
+#pragma mark - Appearance Methods
+- (void)customiseAppeareance {
+    UIColor *titleTextColor = [UIColor colorWithRed:186.0f/255.0f green:193.0f/255.0f blue:200.0f/255.0f alpha:1.0];
+    UIColor *navBarBackgroundColor = [UIColor colorWithRed:34.0f/255.0f green:34.0f/255.0f blue:34.0f/255.0f alpha:1.0];
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowColor: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]];
+    [shadow setShadowOffset: CGSizeMake(0.0f, 0.5f)];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor, NSShadowAttributeName: shadow,}];
+    [[UINavigationBar appearance] setTintColor:titleTextColor];
+    [[UINavigationBar appearance] setBarTintColor:navBarBackgroundColor];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:titleTextColor, NSShadowAttributeName: shadow,} forState:UIControlStateNormal];
 }
 
 @end
