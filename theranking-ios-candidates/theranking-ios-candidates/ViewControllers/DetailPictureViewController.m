@@ -55,12 +55,27 @@
     self.cameraShutterSpeedLabel.text = self.pictureModel.pictureCameraShutterSpeed;
     self.cameraApertureLabel.text = self.pictureModel.pictureCameraAperture;
     self.pictureDescriptionLabel.text = self.pictureModel.pictureDescription;
+    
+    [self setUpMap];
 }
-
-
-
-
-
-
+- (void)setUpMap {
+    
+    if (self.pictureModel.pictureLatitud == nil || self.pictureModel.pictureLongitud == nil) {
+        [self.pictureMapView setHidden:YES];
+        [self.heightMapConstraint setConstant:10.0f];
+        
+    } else {
+        [self.pictureMapView setHidden:NO];
+        CLLocationCoordinate2D locationPicture = CLLocationCoordinate2DMake([self.pictureModel.pictureLatitud doubleValue],
+                                                                            [self.pictureModel.pictureLongitud doubleValue]);
+        MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(1, 1);
+        MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(locationPicture, coordinateSpan);
+        [self.pictureMapView setRegion:coordinateRegion animated:YES];
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        [annotation setCoordinate:locationPicture];
+        [annotation setTitle:self.pictureModel.pictureName];
+        [self.pictureMapView addAnnotation:annotation];
+    }
+}
 
 @end
