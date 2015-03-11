@@ -13,6 +13,6 @@
 @interface LoadPictureDetailsInteractor : BaseInteractor
 
 - (instancetype)initWithCoreDataStack:(CoreDataStack *)coreDataStack;
-- (PictureEntity *)showDetailsForPicture:(PictureEntity *)picture;
+- (PictureEntity *)loadDetailsForPicture:(PictureEntity *)picture;
 
 @end

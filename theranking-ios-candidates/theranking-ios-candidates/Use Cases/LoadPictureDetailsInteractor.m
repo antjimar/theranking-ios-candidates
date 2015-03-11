@@ -22,7 +22,7 @@
     return self;
 }
 
-- (PictureEntity *)showDetailsForPicture:(PictureEntity *)picture {
+- (PictureEntity *)loadDetailsForPicture:(PictureEntity *)picture {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kPictureEntityName];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"pictureId", [NSString stringWithFormat:@"%@", picture.pictureId]];
     NSArray *pictures = [self.backgroundManagedObjectContext executeFetchRequest:fetchRequest error:nil];
