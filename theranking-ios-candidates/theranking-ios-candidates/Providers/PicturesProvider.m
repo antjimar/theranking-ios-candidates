@@ -10,7 +10,7 @@
 #import "PictureEntity+Builder.h"
 #import "CoreDataStack.h"
 
-static NSInteger const kNumberOfPhotos = 60;
+static NSInteger const kNumberOfPhotos = 40;
 static NSInteger const kImageSize = 4;
 static NSString * const kPhotosKey = @"photos";
 
