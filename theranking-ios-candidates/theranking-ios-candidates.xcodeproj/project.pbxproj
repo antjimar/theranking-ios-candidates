@@ -12,6 +12,8 @@
 		795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 795B08261AAF6B8B0049BFA9 /* NetworkFetcher.m */; };
 		79DEC9171AB04EE50070E946 /* AJCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC9161AB04EE50070E946 /* AJCoreDataCollectionViewController.m */; };
 		79DEC9191AB0A3EC0070E946 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DEC9181AB0A3EC0070E946 /* MapKit.framework */; };
+		79DEC91D1AB0CCD00070E946 /* NavigationTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC91C1AB0CCD00070E946 /* NavigationTransitionAnimator.m */; };
+		79DEC9201AB17A710070E946 /* LoadPictureDetailsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC91F1AB17A710070E946 /* LoadPictureDetailsInteractor.m */; };
 		79EB8D2B1AAEFC1E00E6E6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2A1AAEFC1E00E6E6F2 /* main.m */; };
 		79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */; };
 		79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */; };
@@ -52,6 +54,10 @@
 		79DEC9151AB04EE50070E946 /* AJCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJCoreDataCollectionViewController.h; sourceTree = "<group>"; };
 		79DEC9161AB04EE50070E946 /* AJCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJCoreDataCollectionViewController.m; sourceTree = "<group>"; };
 		79DEC9181AB0A3EC0070E946 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		79DEC91B1AB0CCD00070E946 /* NavigationTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTransitionAnimator.h; sourceTree = "<group>"; };
+		79DEC91C1AB0CCD00070E946 /* NavigationTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTransitionAnimator.m; sourceTree = "<group>"; };
+		79DEC91E1AB17A710070E946 /* LoadPictureDetailsInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadPictureDetailsInteractor.h; sourceTree = "<group>"; };
+		79DEC91F1AB17A710070E946 /* LoadPictureDetailsInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadPictureDetailsInteractor.m; sourceTree = "<group>"; };
 		79EB8D251AAEFC1E00E6E6F2 /* theranking-ios-candidates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "theranking-ios-candidates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB8D291AAEFC1E00E6E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79EB8D2A1AAEFC1E00E6E6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +124,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79DEC91A1AB0CCA60070E946 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				79DEC91B1AB0CCD00070E946 /* NavigationTransitionAnimator.h */,
+				79DEC91C1AB0CCD00070E946 /* NavigationTransitionAnimator.m */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
 		79EB8D1C1AAEFC1E00E6E6F2 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +160,7 @@
 				79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */,
 				79EB8D4B1AAEFD5100E6E6F2 /* CoreDataStack.h */,
 				79EB8D4C1AAEFD5100E6E6F2 /* CoreDataStack.m */,
+				79DEC91A1AB0CCA60070E946 /* Animators */,
 				79EB8D4E1AAF004600E6E6F2 /* ViewControllers */,
 				79EB8D4F1AAF005500E6E6F2 /* Views */,
 				79EB8D501AAF006300E6E6F2 /* Entities */,
@@ -235,6 +251,8 @@
 				79EB8D561AAF0B5B00E6E6F2 /* BaseInteractor.m */,
 				79EB8D931AAF685400E6E6F2 /* LoadPicturesInteractor.h */,
 				79EB8D941AAF685400E6E6F2 /* LoadPicturesInteractor.m */,
+				79DEC91E1AB17A710070E946 /* LoadPictureDetailsInteractor.h */,
+				79DEC91F1AB17A710070E946 /* LoadPictureDetailsInteractor.m */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -412,6 +430,7 @@
 				79EB8D8F1AAF655400E6E6F2 /* DetailPictureViewController.m in Sources */,
 				79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */,
 				79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */,
+				79DEC91D1AB0CCD00070E946 /* NavigationTransitionAnimator.m in Sources */,
 				79EB8D8B1AAF653800E6E6F2 /* MainPictureViewController.m in Sources */,
 				795B08221AAF6AEA0049BFA9 /* RequestManagerFactory.m in Sources */,
 				79EB8D951AAF685400E6E6F2 /* LoadPicturesInteractor.m in Sources */,
@@ -420,6 +439,7 @@
 				79EB8D7C1AAF62F900E6E6F2 /* PictureEntity.m in Sources */,
 				79EB8D571AAF0B5B00E6E6F2 /* BaseInteractor.m in Sources */,
 				79DEC9171AB04EE50070E946 /* AJCoreDataCollectionViewController.m in Sources */,
+				79DEC9201AB17A710070E946 /* LoadPictureDetailsInteractor.m in Sources */,
 				79EB8D4D1AAEFD5100E6E6F2 /* CoreDataStack.m in Sources */,
 				79EB8D821AAF648200E6E6F2 /* BaseProvider.m in Sources */,
 				795B08271AAF6B8B0049BFA9 /* NetworkFetcher.m in Sources */,
