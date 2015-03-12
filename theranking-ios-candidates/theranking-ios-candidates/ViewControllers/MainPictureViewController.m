@@ -72,6 +72,11 @@ static NSString *cellId = @"PictureCellId";
     DetailPictureViewController *detailVC = [[DetailPictureViewController alloc] initWithModel:picture];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [(id<PictureEntityCellProtocol>)cell animateElements];
+}
 
 #pragma mark - Registration Methods
 - (void)registerNib {

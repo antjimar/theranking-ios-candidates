@@ -12,5 +12,5 @@
 @protocol PictureEntityCellProtocol <NSObject>
 
 - (void)drawPictureEntity:(id<PictureEntityProtocol>)pictureEntity;
-
+- (void)animateElements;
 @end
