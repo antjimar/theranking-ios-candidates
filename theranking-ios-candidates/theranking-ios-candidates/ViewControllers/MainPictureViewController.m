@@ -6,13 +6,11 @@
 //  Copyright (c) 2015 antjimar. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "MainPictureViewController.h"
-#import "PictureCollectionViewCell.h"
-#import "PictureEntity+Builder.h"
 #import "LoadPicturesInteractor.h"
 #import "LoadPictureDetailsInteractor.h"
 #import "DetailPictureViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "PictureEntityProtocol.h"
 #import "PictureEntityCellProtocol.h"
 #import "PictureEntityFactory.h"
