@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @import CoreData;
+
 @interface BaseInteractor : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;

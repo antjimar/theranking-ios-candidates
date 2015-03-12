@@ -19,7 +19,6 @@ static NSString * const kBaseDomain = @"https://api.500px.com/v1/photos";
         _requestManager = [RequestManagerFactory requestManager];
         _requestManager.baseDomain = kBaseDomain;
     }
-
     return _requestManager;
 }
 

@@ -8,7 +8,6 @@
 
 #import "PictureEntity.h"
 
-
 @implementation PictureEntity
 
 @dynamic pictureId;
