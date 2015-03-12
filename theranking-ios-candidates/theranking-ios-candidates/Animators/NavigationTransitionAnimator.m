@@ -132,7 +132,7 @@ static CGFloat const kTotalDurationAlpha = 0.6f;
     // Force to recalculate if we are using Autolayout
     [toView layoutIfNeeded];
     
-    // Move toViewController to the right, to replicate the default Navigation animation
+    // Move toView to the right, to replicate the default Navigation animation
     CGPoint toViewCenter = toView.center;
     toViewCenter.x += CGRectGetWidth(fromView.frame);
     toView.center = toViewCenter;

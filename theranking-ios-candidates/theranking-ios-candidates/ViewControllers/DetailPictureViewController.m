@@ -61,7 +61,6 @@
     [self setUpMap];
 }
 - (void)setUpMap {
-    
     if (self.pictureModel.pictureLatitud == nil || self.pictureModel.pictureLongitud == nil) {
         [self.pictureMapView setHidden:YES];
         [self.heightMapConstraint setConstant:10.0f];
@@ -75,13 +74,23 @@
         [self.pictureMapView setRegion:coordinateRegion animated:YES];
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         [annotation setCoordinate:locationPicture];
-        [annotation setTitle:self.pictureModel.pictureName];
-        [self.pictureMapView addAnnotation:annotation];
+        
+        // Get Address
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:[self.pictureModel.pictureLatitud doubleValue]
+                                                          longitude:[self.pictureModel.pictureLongitud doubleValue]];
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (placemarks.count) {
+                NSDictionary *dictionary = [[placemarks objectAtIndex:0] addressDictionary];
+                [annotation setTitle:dictionary[@"City"]];
+                [annotation setSubtitle:dictionary[@"Country"]];
+            } else {
+                [annotation setTitle:self.pictureModel.pictureName];
+            }
+            [self.pictureMapView addAnnotation:annotation];
+
+        }];
+        
     }
 }
-
--(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
-    NSLog(@"");
-}
-
 @end
