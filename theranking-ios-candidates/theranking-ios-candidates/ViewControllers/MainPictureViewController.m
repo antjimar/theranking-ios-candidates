@@ -14,10 +14,11 @@
 #import "PictureEntityProtocol.h"
 #import "PictureEntityCellProtocol.h"
 #import "PictureEntityFactory.h"
+#import "NavigationTransitionAnimator.h"
 
 static NSString *cellId = @"PictureCellId";
 
-@interface MainPictureViewController ()
+@interface MainPictureViewController ()<UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) UILabel *labelIndicator;
@@ -42,6 +43,7 @@ static NSString *cellId = @"PictureCellId";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.delegate = self;
     self.collectionView.backgroundColor = [UIColor colorWithRed:222.0f/255.0f green:222.0f/255.0f blue:222.0f/255.0f alpha:0.8];
     [self registerNib];
     [self setupAcitivityIndicator];
@@ -76,6 +78,18 @@ static NSString *cellId = @"PictureCellId";
        willDisplayCell:(UICollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
     [(id<PictureEntityCellProtocol>)cell animateElements];
+}
+
+#pragma mark - Transitions Methods
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC {
+    NavigationTransitionAnimator *animator = nil;
+    animator = [[NavigationTransitionAnimator alloc] init];
+    animator.operation = operation;
+    
+    return animator;
 }
 
 #pragma mark - Registration Methods

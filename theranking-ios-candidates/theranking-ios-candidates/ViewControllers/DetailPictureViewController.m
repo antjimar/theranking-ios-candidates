@@ -8,6 +8,7 @@
 
 #import "DetailPictureViewController.h"
 #import "PictureEntity+Builder.h"
+#import "NavigationTransitionAnimator.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DetailPictureViewController ()
@@ -39,6 +40,7 @@
     self.title = self.pictureModel.pictureName;
     [self syncModelWithView];
 }
+
 
 #pragma mark - Utils Methods
 - (void)syncModelWithView {
@@ -76,6 +78,10 @@
         [annotation setTitle:self.pictureModel.pictureName];
         [self.pictureMapView addAnnotation:annotation];
     }
+}
+
+-(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    NSLog(@"");
 }
 
 @end

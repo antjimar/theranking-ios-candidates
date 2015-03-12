@@ -22,8 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *cameraApertureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pictureDescriptionLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *pictureMapView;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightMapConstraint;
+
+@property (strong, nonatomic) NSIndexPath *indexPathFromViewController;
 
 - (instancetype)initWithModel:(PictureEntity *)pictureModel;
 
