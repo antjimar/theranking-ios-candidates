@@ -30,8 +30,6 @@ static NSString * const kUserPicURLJSON = @"user.userpic_url";
 static NSString * const kFullnameJSON = @"user.fullname";
 NSString * const kPictureEntityName = @"PictureEntity";
 
-
-
 @implementation PictureEntity (Builder)
 
 + (void)pictureFromDictionary:(NSDictionary *)pictureDictionary inPicture:(PictureEntity *)picture {

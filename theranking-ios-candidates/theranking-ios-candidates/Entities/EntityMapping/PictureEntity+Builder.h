@@ -10,9 +10,7 @@
 
 extern const struct PictureEntityAttributes {
     __unsafe_unretained NSString * pictureRating;
-
 } PictureEntityAttributes;
-
 
 extern NSString * const kPictureEntityName;
 

@@ -25,7 +25,6 @@ static NSString * const kPhotosKey = @"photos";
     }
     return self;
 }
-
 - (void)loadPicturesWithSuccess:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
     // Download from API Rest
     NSDictionary* URLParams = @{
@@ -48,7 +47,6 @@ static NSString * const kPhotosKey = @"photos";
         errorBlock(nil, error);
     }];
 }
-
 
 #pragma mark - Utils Methods
 - (void)updateDataBaseWithNewPictures:(NSArray *)newPictures withCompletion:(void(^)(NSArray *pictures))completion {

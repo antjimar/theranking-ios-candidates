@@ -20,7 +20,6 @@
     }
     return self;
 }
-
 - (void)listOfPicuresWithCompletionBlock:(void(^)(NSArray *pictures))completion {
     [self.pictureProvider loadPicturesWithSuccess:^(id data) {
         completion(data);
@@ -36,4 +35,5 @@
     }
     return _pictureProvider;
 }
+
 @end

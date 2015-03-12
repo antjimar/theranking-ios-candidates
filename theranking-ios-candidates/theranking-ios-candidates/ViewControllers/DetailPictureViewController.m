@@ -90,7 +90,6 @@
             [self.pictureMapView addAnnotation:annotation];
 
         }];
-        
     }
 }
 @end

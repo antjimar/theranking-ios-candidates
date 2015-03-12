@@ -67,7 +67,6 @@ static CGFloat const kMarginCells = 0.0f;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = kMarginCells;
     layout.itemSize = CGSizeMake(screenWidth, screenWidth);
-//    layout.sectionInset = UIEdgeInsetsMake(kMarginCells, kMarginCells, kMarginCells, kMarginCells);
     
     return layout;
 }
