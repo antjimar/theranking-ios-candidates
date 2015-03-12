@@ -14,6 +14,9 @@
 		79DEC9191AB0A3EC0070E946 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DEC9181AB0A3EC0070E946 /* MapKit.framework */; };
 		79DEC91D1AB0CCD00070E946 /* NavigationTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC91C1AB0CCD00070E946 /* NavigationTransitionAnimator.m */; };
 		79DEC9201AB17A710070E946 /* LoadPictureDetailsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC91F1AB17A710070E946 /* LoadPictureDetailsInteractor.m */; };
+		79DEC9261AB180D30070E946 /* PictureEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC9251AB180D30070E946 /* PictureEntityFactory.m */; };
+		79DEC9601AB18C740070E946 /* PictureEntity+PictureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC95F1AB18C740070E946 /* PictureEntity+PictureEntity.m */; };
+		79DEC9631AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DEC9621AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.m */; };
 		79EB8D2B1AAEFC1E00E6E6F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2A1AAEFC1E00E6E6F2 /* main.m */; };
 		79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2D1AAEFC1E00E6E6F2 /* AppDelegate.m */; };
 		79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB8D2F1AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld */; };
@@ -58,6 +61,14 @@
 		79DEC91C1AB0CCD00070E946 /* NavigationTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTransitionAnimator.m; sourceTree = "<group>"; };
 		79DEC91E1AB17A710070E946 /* LoadPictureDetailsInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadPictureDetailsInteractor.h; sourceTree = "<group>"; };
 		79DEC91F1AB17A710070E946 /* LoadPictureDetailsInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadPictureDetailsInteractor.m; sourceTree = "<group>"; };
+		79DEC9221AB17FF30070E946 /* PictureEntityProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEntityProtocol.h; sourceTree = "<group>"; };
+		79DEC9231AB180680070E946 /* PictureEntityCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEntityCellProtocol.h; sourceTree = "<group>"; };
+		79DEC9241AB180D30070E946 /* PictureEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEntityFactory.h; sourceTree = "<group>"; };
+		79DEC9251AB180D30070E946 /* PictureEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureEntityFactory.m; sourceTree = "<group>"; };
+		79DEC95E1AB18C740070E946 /* PictureEntity+PictureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureEntity+PictureEntity.h"; sourceTree = "<group>"; };
+		79DEC95F1AB18C740070E946 /* PictureEntity+PictureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureEntity+PictureEntity.m"; sourceTree = "<group>"; };
+		79DEC9611AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureCollectionViewCell+PictureEntity.h"; sourceTree = "<group>"; };
+		79DEC9621AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureCollectionViewCell+PictureEntity.m"; sourceTree = "<group>"; };
 		79EB8D251AAEFC1E00E6E6F2 /* theranking-ios-candidates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "theranking-ios-candidates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EB8D291AAEFC1E00E6E6F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79EB8D2A1AAEFC1E00E6E6F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +144,21 @@
 			path = Animators;
 			sourceTree = "<group>";
 		};
+		79DEC9211AB17EB10070E946 /* PictureEntities */ = {
+			isa = PBXGroup;
+			children = (
+				79DEC9221AB17FF30070E946 /* PictureEntityProtocol.h */,
+				79DEC9231AB180680070E946 /* PictureEntityCellProtocol.h */,
+				79DEC9241AB180D30070E946 /* PictureEntityFactory.h */,
+				79DEC9251AB180D30070E946 /* PictureEntityFactory.m */,
+				79DEC95E1AB18C740070E946 /* PictureEntity+PictureEntity.h */,
+				79DEC95F1AB18C740070E946 /* PictureEntity+PictureEntity.m */,
+				79DEC9611AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.h */,
+				79DEC9621AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.m */,
+			);
+			name = PictureEntities;
+			sourceTree = "<group>";
+		};
 		79EB8D1C1AAEFC1E00E6E6F2 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +189,7 @@
 				79DEC91A1AB0CCA60070E946 /* Animators */,
 				79EB8D4E1AAF004600E6E6F2 /* ViewControllers */,
 				79EB8D4F1AAF005500E6E6F2 /* Views */,
+				79DEC9211AB17EB10070E946 /* PictureEntities */,
 				79EB8D501AAF006300E6E6F2 /* Entities */,
 				79EB8D521AAF009100E6E6F2 /* Use Cases */,
 				79EB8D531AAF009F00E6E6F2 /* Providers */,
@@ -426,9 +453,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				79EB8D7F1AAF636000E6E6F2 /* PictureEntity+Builder.m in Sources */,
+				79DEC9261AB180D30070E946 /* PictureEntityFactory.m in Sources */,
+				79DEC9631AB18D840070E946 /* PictureCollectionViewCell+PictureEntity.m in Sources */,
 				79EB8D9B1AAF68A300E6E6F2 /* PicturesProvider.m in Sources */,
 				79EB8D8F1AAF655400E6E6F2 /* DetailPictureViewController.m in Sources */,
 				79EB8D311AAEFC1E00E6E6F2 /* theranking_ios_candidates.xcdatamodeld in Sources */,
+				79DEC9601AB18C740070E946 /* PictureEntity+PictureEntity.m in Sources */,
 				79EB8D2E1AAEFC1E00E6E6F2 /* AppDelegate.m in Sources */,
 				79DEC91D1AB0CCD00070E946 /* NavigationTransitionAnimator.m in Sources */,
 				79EB8D8B1AAF653800E6E6F2 /* MainPictureViewController.m in Sources */,

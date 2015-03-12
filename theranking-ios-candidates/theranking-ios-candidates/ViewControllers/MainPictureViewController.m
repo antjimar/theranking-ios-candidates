@@ -13,6 +13,9 @@
 #import "LoadPictureDetailsInteractor.h"
 #import "DetailPictureViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "PictureEntityProtocol.h"
+#import "PictureEntityCellProtocol.h"
+#import "PictureEntityFactory.h"
 
 static NSString *cellId = @"PictureCellId";
 
@@ -35,7 +38,6 @@ static NSString *cellId = @"PictureCellId";
         [_activityIndicator setHidden:YES];
         [_activityIndicator stopAnimating];
         _labelIndicator = [[UILabel alloc] init];
-        _loadDetailsInteractor = [[LoadPictureDetailsInteractor alloc] initWithCoreDataStack:self.coreDataStack];
         self.title = @"500px";
     }
     return self;
@@ -54,20 +56,18 @@ static NSString *cellId = @"PictureCellId";
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     // Stop activity because we have data :)
     [self stopActivityIndicator];
-    PictureEntity *picture = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
-                                                                                forIndexPath:indexPath];
-    cell.pictureNameLabel.text = picture.pictureName;
-    cell.ratingLabel.text = [NSString stringWithFormat:@"%@", picture.pictureRating];
-    [cell.pictureImageView sd_setImageWithURL:[NSURL URLWithString:picture.pictureImgURL]
-                             placeholderImage:[UIImage imageNamed:@"500px-logo1"]];
+    
+    id<PictureEntityProtocol> item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    UICollectionViewCell<PictureEntityCellProtocol> *cell = [PictureEntityFactory cellForEntity:item
+                                                                              forCollectionView:collectionView
+                                                                                    atIndexPath:indexPath];
+    [cell drawPictureEntity:item];
+    
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate Methods
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    PictureEntity *picture = (PictureEntity *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {    
     PictureEntity *picture = [self.loadDetailsInteractor loadDetailsAtIndexPath:indexPath
                                                    withFetchedResultsController:self.fetchedResultsController];
     
@@ -77,8 +77,7 @@ static NSString *cellId = @"PictureCellId";
 
 #pragma mark - Registration Methods
 - (void)registerNib {
-    UINib *nib = [UINib nibWithNibName:@"PictureCollectionViewCell" bundle:nil];
-    [self.collectionView registerNib:nib forCellWithReuseIdentifier:cellId];
+    [PictureEntityFactory registerCellsInCollectionView:self.collectionView];
 }
 
 #pragma mark - Activity Indicator Methods
@@ -142,6 +141,14 @@ static NSString *cellId = @"PictureCellId";
 }
 - (void)refresh:(id)sender {
     [self loadDataFromServer:sender];
+}
+
+#pragma mark - Lazy instantation Methods
+-(LoadPictureDetailsInteractor *)loadDetailsInteractor {
+    if (!_loadDetailsInteractor) {
+        _loadDetailsInteractor = [[LoadPictureDetailsInteractor alloc] initWithCoreDataStack:self.coreDataStack];
+    }
+    return _loadDetailsInteractor;
 }
 
 @end
