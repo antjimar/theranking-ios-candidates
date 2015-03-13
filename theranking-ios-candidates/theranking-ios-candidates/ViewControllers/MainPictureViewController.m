@@ -99,7 +99,6 @@ static NSString *cellId = @"PictureCellId";
 
 #pragma mark - Activity Indicator Methods
 - (void)initActivityIndicator {
-    // Ponemos una label "Cargando imagen"
     self.labelIndicator = [self createLabelLoadingWithText:@"The images are coming :)..."];
     [self.view addSubview:self.labelIndicator];
     [self.activityIndicator setHidden:NO];
@@ -144,15 +143,10 @@ static NSString *cellId = @"PictureCellId";
     return label;
 }
 - (void)setupRefreshController {
-    // Iniciamos el Refresh Control
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    
-    // Configuramos el Refresh Control
     [refreshControl addTarget:self
                        action:@selector(refresh:)
-             forControlEvents:UIControlEventValueChanged];
-    
-    // Se lo añadimos al viewController
+             forControlEvents:UIControlEventValueChanged];    
     [self.collectionView addSubview:refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
 }
